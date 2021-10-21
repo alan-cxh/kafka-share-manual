@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@172.32.150.13:1521:nlpass01
+    username: paastest
+    password: Paas1015
+kafka:
+  bootstrap-servers: 10.1.8.15:9092
+  session-timeout: 50000
+  auto-offset-reset: earliest
+  enable-auto-commit: false
+  auto-commit-interval: 5000
+  max-poll-records: 1000
+  concurrency: 3
+  max-poll-interval: 15000
+  max-partition-fetch-bytes: 15728640
+  group-id: group1
+  heartbeat-interval: 3000
+  listener:
+    ack-mode: MANUAL_IMMEDIATE
+    enable-batch: true
+  topic:
+    pattern: postgres.paas.*

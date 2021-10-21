@@ -1,0 +1,294 @@
+{
+  "payload": {
+    "after": {
+      "user_id": 22,
+      "test1": "77u/aGVsbG8x",
+      "test2": "11111"
+    },
+    "op": "u",
+    "source": {
+      "connector": "postgresql",
+      "db": "postgres",
+      "lsn": 515884728,
+      "name": "postgres",
+      "schema": "paas",
+      "snapshot": "false",
+      "table": "aaa_sys_user",
+      "ts_ms": 1612331648145,
+      "txId": 203407,
+      "version": "1.4.0.Final"
+    },
+    "ts_ms": 1612331648377
+  },
+  "schema": {
+    "fields": [
+      {
+        "field": "before",
+        "fields": [
+          {
+            "field": "user_id",
+            "optional": false,
+            "type": "int64"
+          },
+          {
+            "field": "username",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "account",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "password",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "dept",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "status",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "phone",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "description",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "create_date",
+            "name": "io.debezium.time.MicroTimestamp",
+            "optional": true,
+            "type": "int64",
+            "version": 1
+          },
+          {
+            "field": "change_date",
+            "name": "io.debezium.time.MicroTimestamp",
+            "optional": true,
+            "type": "int64",
+            "version": 1
+          },
+          {
+            "field": "creator_id",
+            "optional": true,
+            "type": "int64"
+          },
+          {
+            "field": "del_flag",
+            "optional": true,
+            "type": "int16"
+          },
+          {
+            "field": "test1",
+            "optional": true,
+            "type": "bytes"
+          },
+          {
+            "field": "test2",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "name": "postgres.paas.aaa_sys_user.Value",
+        "optional": true,
+        "type": "struct"
+      },
+      {
+        "field": "after",
+        "fields": [
+          {
+            "field": "user_id",
+            "optional": false,
+            "type": "int64"
+          },
+          {
+            "field": "username",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "account",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "password",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "dept",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "status",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "phone",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "description",
+            "optional": true,
+            "type": "string"
+          },
+          {
+            "field": "create_date",
+            "name": "io.debezium.time.MicroTimestamp",
+            "optional": true,
+            "type": "int64",
+            "version": 1
+          },
+          {
+            "field": "change_date",
+            "name": "io.debezium.time.MicroTimestamp",
+            "optional": true,
+            "type": "int64",
+            "version": 1
+          },
+          {
+            "field": "creator_id",
+            "optional": true,
+            "type": "int64"
+          },
+          {
+            "field": "del_flag",
+            "optional": true,
+            "type": "int16"
+          },
+          {
+            "field": "test1",
+            "optional": true,
+            "type": "bytes"
+          },
+          {
+            "field": "test2",
+            "optional": true,
+            "type": "string"
+          }
+        ],
+        "name": "postgres.paas.aaa_sys_user.Value",
+        "optional": true,
+        "type": "struct"
+      },
+      {
+        "field": "source",
+        "fields": [
+          {
+            "field": "version",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "connector",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "name",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "ts_ms",
+            "optional": false,
+            "type": "int64"
+          },
+          {
+            "field": "snapshot",
+            "name": "io.debezium.data.Enum",
+            "optional": true,
+            "parameters": {
+              "allowed": "true,last,false"
+            },
+            "type": "string",
+            "version": 1
+          },
+          {
+            "field": "db",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "schema",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "table",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "txId",
+            "optional": true,
+            "type": "int64"
+          },
+          {
+            "field": "lsn",
+            "optional": true,
+            "type": "int64"
+          },
+          {
+            "field": "xmin",
+            "optional": true,
+            "type": "int64"
+          }
+        ],
+        "name": "io.debezium.connector.postgresql.Source",
+        "optional": false,
+        "type": "struct"
+      },
+      {
+        "field": "op",
+        "optional": false,
+        "type": "string"
+      },
+      {
+        "field": "ts_ms",
+        "optional": true,
+        "type": "int64"
+      },
+      {
+        "field": "transaction",
+        "fields": [
+          {
+            "field": "id",
+            "optional": false,
+            "type": "string"
+          },
+          {
+            "field": "total_order",
+            "optional": false,
+            "type": "int64"
+          },
+          {
+            "field": "data_collection_order",
+            "optional": false,
+            "type": "int64"
+          }
+        ],
+        "optional": true,
+        "type": "struct"
+      }
+    ],
+    "name": "postgres.paas.aaa_sys_user.Envelope",
+    "optional": false,
+    "type": "struct"
+  }
+}
