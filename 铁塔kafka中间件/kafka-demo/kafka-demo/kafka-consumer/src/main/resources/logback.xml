@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false">
+    <property name="SYSTEM_LOG" value="/lsshome/lssapp/log/system"/>
+    <property name="AUDIT_LOG" value="/lsshome/lssapp/log/audit"/>
+    <property name="TRANS_LOG" value="/lsshome/lssapp/log/transaction"/>
+	<!-- 控制台输出 -->
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+　　　　　 <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+　　　　　　　　　<pattern>%d{yyyy-MM-dd HH:mm:ss} [%p][%c][%M][%L]-> %m%n</pattern>
+　　　　　 </encoder>
+　　　</appender>
+	<!-- 按照每天生成日志文件 -->
+	<appender name="SYSTEM" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!--日志文件输出的文件名-->
+			<FileNamePattern>${SYSTEM_LOG}-%d{yyyy-MM-dd}.log</FileNamePattern>
+			<!--日志文件保留天数-->
+			<MaxHistory>90</MaxHistory>
+		</rollingPolicy>
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<!--格式化输出：%d表示日期，%thread表示线程名，%-5level：级别从左显示5个字符宽度%msg：日志消息，%n是换行符-->
+			<pattern>%d{yyyy-MM-dd HH:mm:ss} [%p][%c][%M][%L]-> %m%n</pattern>
+		</encoder>
+		<!--日志文件最大的大小-->
+		<triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<MaxFileSize>2048MB</MaxFileSize>
+		</triggeringPolicy>
+	</appender>
+	<logger name="SystemLog" additivity="false" >
+		<appender-ref ref="SYSTEM"/>
+		<appender-ref ref="STDOUT"/>
+	</logger>
+
+	<logger name="org.apache.kafka" level="OFF"/>
+
+	<!-- 日志输出级别 -->
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>

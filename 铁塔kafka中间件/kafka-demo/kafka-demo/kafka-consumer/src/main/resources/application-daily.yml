@@ -1,0 +1,22 @@
+logging:
+  config: classpath:logback.xml
+kafka:
+  bootstrap-server: 192.168.154.137:9092,192.168.154.138:9092,192.168.154.139:9092
+  catch:
+    url: http://123.126.41.204:20437/codis/
+  consumer:
+    auto-commit-interval: 100
+    enable-auto-commit: true
+    max-poll-records: 8
+    session-timeout: 20000
+  error:
+    url: http://192.168.154.137:9002/email/sendEmail
+  errorEmail:
+    addName: SDK for kafka
+    reToEmail: 19926468792@163.com
+    subject: failed to send Email
+  topic:
+    groupName: localGroupHaosc
+    topicName: voteChannels,one,two
+server:
+  port: 8081

@@ -1,0 +1,12 @@
+#logging:
+#  config: classpath:logback.xml
+kafka:
+  bootstrap-server: hw_kafka1:19092,hw_kafka2:29092,hw_kafka3:39092
+#  bootstrap-server: 120.79.223.252:9092
+  producer:
+    batch-size: 16785
+    buffer-memory: 33554432
+    linger: 50
+    retries: 3
+server:
+  port: 8089

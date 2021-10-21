@@ -1,0 +1,19 @@
+logging:
+  config: classpath:logback.xml
+kafka:
+  bootstrap-server: 192.168.54.9:19092,192.168.54.10:29092,192.168.54.11:39092
+  catch:
+    url: http://192.168.54.9:7000/codis/
+  error:
+    url: http://192.168.54.9:8765/email/sendEmail
+  errorEmail:
+    addName: SDK for kafka
+    reToEmail: 19926468792@163.com
+    subject: failed to send Email
+  producer:
+    batch-size: 16785
+    buffer-memory: 33554432
+    linger: 50
+    retries: 3
+server:
+  port: 8082

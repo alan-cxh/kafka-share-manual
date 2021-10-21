@@ -1,0 +1,32 @@
+#logging:
+#  config: classpath:logback.xml
+kafka:
+  bootstrap-server: kafka1:19092,kafka2:29092,kafka3:39092 
+  catch:
+    url: http://123.126.41.204:20437/codis/
+  consumer:
+    auto-commit-interval: 100
+    enable-auto-commit: true
+#    filter: com.chinatower.framework.consumer.filter.DemoFilter
+#    handler: com.chinatower.framework.producer.hanler.DemoHanler
+    max-poll-records: 8
+#    receive: com.chinatower.framework.consumer.DemoConsumer
+    session-timeout: 20000
+  error:
+    url: http://123.126.41.204:20416/email/sendEmail
+  errorEmail:
+    addName: SDK for kafka
+    reToEmail: 19926468792@163.com
+    subject: failed to send Email
+  producer:
+    batch-size: 16785
+    buffer-memory: 33554432
+    linger: 50
+    retries: 3
+  topic:
+    groupName: localGroupHaosc
+    topicName: voteChannels,one,two,ttcv
+mq:
+  logger: SystemLog
+server:
+  port: 8080
